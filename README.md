@@ -33,11 +33,19 @@ This project uses the default SQLite database that comes with Django. To set up 
 ### Admin Panel
 The Django admin panel is available at http://localhost:8000/admin. You can use it to manage the client, artist, and work models in the project.
 
+### Test Admin
+```
+username: admin
+password: admin
+```
+If this does not work then try creating a super user with
+```
+python manage.py createsuperuser
+```
+and check the tables after migration
 ### API Endpoints
 This project includes the following REST API endpoints:
-
 #### List Works
-
 ```
 GET /api/works/
 ```
@@ -82,3 +90,15 @@ The request body should contain the following fields:
 username (string): The client's username
 password (string): The client's password
 ```
+
+### Links to test
+You can test the API endpoints using the following URLs:
+```
+
+http://127.0.0.1:8000/api/works
+http://127.0.0.1:8000/api/works?artist=[Artist Name]
+http://127.0.0.1:8000/api/works?work_type=Youtube
+http://127.0.0.1:8000/api/works/create
+```
+
+
